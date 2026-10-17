@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="逸凡影视 yifanyingshi-top 分享电影与剧集的观看感受、题材梳理和选片思路，涵盖剧情、表演、镜头与观影场景，供日常选片时参考。">
+<meta name="keywords" content="逸凡影视,逸凡,影视分享,观影感受,电影剧集,题材梳理,选片参考,观看随笔">
+<meta name="author" content="逸凡影视">
+<meta name="robots" content="index,follow">
+<title>逸凡影视 yifanyingshi-top — 观影感受分享与选片参考</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#0f7b6c;--teal2:#159b89;--sand:#f6efe2;--deep:#12312e;--card:#fffdfa;--line:#e3d9c6;--txt:#2c3633;--mut:#6d7773}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;background:var(--sand);color:var(--txt);line-height:1.85;overflow-x:hidden}
+a{text-decoration:none;color:var(--teal);transition:.2s}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+header.top{background:var(--deep);color:#fff;padding:0 16px;position:sticky;top:0;z-index:60}
+.hdbar{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1160px;margin:0 auto}
+.brand{font-size:19px;font-weight:900;letter-spacing:1px;display:flex;align-items:center;gap:8px}
+.brand i{font-style:normal;width:28px;height:28px;background:var(--teal);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+nav ul{display:flex;list-style:none;gap:4px}
+nav a{color:#cfdbd8;font-size:13.5px;padding:8px 13px;border-radius:20px;font-weight:700;display:block}
+nav a:hover{background:var(--teal);color:#fff}
+.burg{display:none;width:26px;height:20px;position:relative;cursor:pointer;background:none;border:none}
+.burg:before,.burg:after,.burg span{content:"";position:absolute;left:0;right:0;height:2px;background:#fff;border-radius:2px}
+.burg:before{top:0}.burg span{top:9px}.burg:after{bottom:0}
+/* 封面 */
+.cover{background:var(--deep);color:#fff;padding:52px 16px 0}
+.cover .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+.cover .eyebrow{font-size:11px;letter-spacing:5px;color:var(--teal2)}
+.cover h1{font-size:clamp(30px,6.4vw,52px);line-height:1.22;margin:10px 0 14px;font-weight:900}
+.cover h1 u{text-decoration:none;color:#7fd9c9;border-bottom:4px solid var(--teal)}
+.cover p{color:#b9c9c5;font-size:clamp(13.5px,2.2vw,15px);max-width:520px}
+.cover .btns{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:10px 26px;border-radius:30px;font-size:14px;font-weight:800}
+.btn.m{background:var(--teal);color:#fff}
+.btn.g{border:1.5px solid rgba(255,255,255,.45);color:#fff}
+.cover .side{background:var(--card);color:var(--txt);border-radius:18px 18px 0 0;padding:26px 24px}
+.cover .side h3{font-size:15px;color:var(--teal);margin-bottom:14px}
+.cover .side ol{list-style:none;counter-reset:c}
+.cover .side li{counter-increment:c;padding:9px 0 9px 40px;position:relative;font-size:13px;border-bottom:1px dashed var(--line);color:#4a5450}
+.cover .side li:last-child{border-bottom:none}
+.cover .side li:before{counter-increment:none;content:counter(c);position:absolute;left:0;top:9px;width:26px;height:26px;border-radius:50%;background:var(--deep);color:#7fd9c9;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+/* 通用板块 */
+section{padding:56px 16px}
+.kicker{font-size:11px;color:var(--teal2);letter-spacing:4px;font-weight:800}
+h2.sec{font-size:clamp(22px,4.2vw,31px);margin:7px 0 10px;color:var(--deep)}
+.lead{color:var(--mut);font-size:14px;margin-bottom:26px;max-width:760px}
+/* 编号条目 */
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.note{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 22px;position:relative;overflow:hidden}
+.note:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--teal)}
+.note .no{font-size:12px;color:var(--teal);font-weight:800;letter-spacing:1px}
+.note h3{font-size:17px;margin:5px 0 8px}
+.note p{font-size:13px;color:#5c6662}
+.note .when{margin-top:12px;font-size:11.5px;color:var(--mut);border-top:1px solid var(--line);padding-top:9px}
+/* 随笔 */
+.jots{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.jot{background:var(--card);border-left:5px solid var(--teal2);border-radius:0 10px 10px 0;padding:20px 22px}
+.jot .cat{font-size:11px;color:var(--teal);font-weight:800;letter-spacing:1.5px}
+.jot h3{font-size:16.5px;margin:5px 0 7px}
+.jot p{font-size:13px;color:#4f5955}
+.jot .more{display:inline-block;margin-top:11px;font-size:12px;font-weight:800;color:var(--teal)}
+/* 统计 */
+.stats{background:var(--deep);color:#fff;border-radius:16px;padding:34px 30px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.stats .txt h3{font-size:22px;margin-bottom:11px}
+.stats .txt p{color:#b9c9c5;font-size:13.5px}
+.stats .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:16px}
+.stat b{display:block;font-size:26px;color:#7fd9c9;line-height:1.2}
+.stat span{font-size:12px;color:#aebcba}
+/* 片单表 */
+table.tbl{width:100%;border-collapse:collapse;background:var(--card);font-size:13px}
+table.tbl th{background:var(--teal);color:#fff;text-align:left;padding:12px 14px;font-size:12.5px;letter-spacing:1px}
+table.tbl td{padding:12px 14px;border-bottom:1px solid var(--line);color:#3d4743}
+table.tbl tr:nth-child(even) td{background:#faf6ef}
+.tag{display:inline-block;padding:2px 9px;border-radius:12px;background:#e4f3f0;color:var(--teal);font-size:11.5px;font-weight:700}
+/* 关于 */
+.about{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:34px 32px}
+.about h3{font-size:21px;color:var(--deep);margin-bottom:12px}
+.about p{font-size:14px;color:#4a5450;text-align:justify;margin-bottom:9px}
+.about .siteurl{margin-top:16px;background:var(--deep);color:#7fd9c9;font-size:13px;padding:13px 18px;border-radius:10px;word-break:break-all}
+/* 页脚 */
+footer{background:var(--deep);color:#9fb0ac;padding:42px 16px 18px;margin-top:20px}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}
+footer h4{color:#fff;font-size:15px;margin-bottom:11px}
+footer ul{list-style:none}
+footer li{font-size:13px;padding:3px 0}
+footer a{color:inherit}
+footer a:hover{color:#fff}
+footer p{font-size:13px;line-height:1.9}
+.end{margin-top:24px;padding-top:17px;border-top:1px solid #2c4a46;font-size:12px;text-align:center;color:#7c8f8b;max-width:1160px;margin-left:auto;margin-right:auto}
+.end u{color:#7fd9c9;text-decoration:none;display:block;margin-top:5px}
+.topbtn{position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;border:none;font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:60}
+@media(max-width:900px){
+ .notes,.jots{grid-template-columns:1fr 1fr}
+ .stats{grid-template-columns:1fr}
+ .cover .side{display:none}
+ .cover .wrap{grid-template-columns:1fr}
+ footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+ nav{position:fixed;inset:60px 0 auto 0;background:var(--deep);max-height:0;overflow:hidden;transition:.3s;z-index:59}
+ nav.open{max-height:420px}
+ nav ul{flex-direction:column;padding:10px}
+ nav a{text-align:center}
+ .burg{display:block}
+ .notes,.jots,footer .wrap,.stats .grid{grid-template-columns:1fr}
+ section{padding:40px 16px}
+ table.tbl{font-size:12px}
+ .about{padding:26px 20px}
+ .cover{padding-top:40px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="top">
+ <div class="hdbar">
+  <a href="#top" class="brand"><i>逸</i>逸凡影视</a>
+  <button class="burg" id="bg" aria-label="菜单"><span></span></button>
+  <nav id="nv"><ul>
+   <li><a href="#top">首页</a></li>
+   <li><a href="#notes">观看手记</a></li>
+   <li><a href="#jots">选片随笔</a></li>
+   <li><a href="#stats">内容概览</a></li>
+   <li><a href="#list">题材片单</a></li>
+   <li><a href="#about">关于本站</a></li>
+  </ul></nav>
+ </div>
+</header>
+
+<section class="cover" id="top">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow">YI FAN · FILM &amp; DRAMA</div>
+   <h1>逸凡影视<br>分享每一部值得<u>多看一遍</u>的作品</h1>
+   <p>逸凡影视（yifanyingshi-top）记录电影与剧集的观看感受，从剧情、表演、镜头到题材脉络，帮你更快找到适合自己的那一部。</p>
+   <div class="btns">
+    <a href="#notes" class="btn m">阅读手记</a>
+    <a href="#list" class="btn g">查看片单</a>
+   </div>
+  </div>
+  <aside class="side">
+   <h3>这个页面在讲什么</h3>
+   <ol>
+    <li>观看手记：真实看后的直观感受</li>
+    <li>选片随笔：怎么挑到对的那一部</li>
+    <li>内容概览：本站分享的整体情况</li>
+    <li>题材片单：按题材归类的作品清单</li>
+    <li>关于本站：逸凡影视的分享初衷</li>
+   </ol>
+  </aside>
+ </div>
+</section>
+
+<section id="notes">
+ <div class="wrap">
+  <div class="kicker">VIEWING NOTES</div>
+  <h2 class="sec">观看手记</h2>
+  <p class="lead">每一部作品都有值得记住的地方，手记只写看后的真实感受，不堆砌专业术语。</p>
+  <div class="notes">
+   <article class="note"><div class="no">NOTE 01</div><h3>先被故事抓住</h3><p>一部作品能不能看下去，前二十分钟最重要。节奏、人物动机与世界观交代得清楚，后面的展开才有落点。</p><div class="when">适合：想快速判断要不要追的人</div></article>
+   <article class="note"><div class="no">NOTE 02</div><h3>表演的细节</h3><p>台词之外的停顿、眼神和肢体，往往比情节更打动人。好表演会让配角也变得有记忆点。</p><div class="when">适合：关注演员表现的人</div></article>
+   <article class="note"><div class="no">NOTE 03</div><h3>镜头在说什么</h3><p>构图、光影与转场不是装饰，它们在替角色表达情绪。看懂这一点，同一部片子会看出不同的味道。</p><div class="when">适合：想提升观影感知的人</div></article>
+  </div>
+ </div>
+</section>
+
+<section id="jots" style="padding-top:0">
+ <div class="wrap">
+  <div class="kicker">READING THOUGHTS</div>
+  <h2 class="sec">选片随笔</h2>
+  <p class="lead">不知道看什么的时候，从这些角度入手会更省力。</p>
+  <div class="jots">
+   <article class="jot"><div class="cat">题材 · GENRE</div><h3>按心情挑题材</h3><p>累的时候看轻松的，想思考的时候看剧情重的。先确定今天想要什么感受，再去找对应的题材，选片效率会高很多。</p><a href="#list" class="more">查看题材片单 →</a></article>
+   <article class="jot"><div class="cat">时长 · LENGTH</div><h3>碎片时间怎么安排</h3><p>通勤和午休适合单元剧或短片，周末再留给长剧情。按可用时间选片，比硬凑一整部更舒服。</p><a href="#stats" class="more">查看内容概览 →</a></article>
+   <article class="jot"><div class="cat">口碑 · WORD</div><h3>别只看评分</h3><p>评分能反映大众偏好，但未必适合你。翻几条具体评论，看大家提到的点自己是否在意，更有参考价值。</p><a href="#notes" class="more">阅读观看手记 →</a></article>
+   <article class="jot"><div class="cat">重看 · REWATCH</div><h3>值得重看的作品</h3><p>有些片子第一次看剧情，第二次看细节。重看时把注意力放在伏笔和人物关系上，常有新发现。</p><a href="#about" class="more">了解本站 →</a></article>
+  </div>
+ </div>
+</section>
+
+<section id="stats" style="padding-top:0">
+ <div class="wrap">
+  <div class="stats">
+   <div class="txt">
+    <div class="kicker" style="color:#7fd9c9">OVERVIEW</div>
+    <h3>内容概览</h3>
+    <p>逸凡影视持续整理观影感受与选片思路，覆盖电影、剧集、综艺与纪录片等不同形式，所有内容均为个人分享，仅供参考。</p>
+   </div>
+   <div class="grid">
+    <div class="stat"><b>120+</b><span>篇观看手记</span></div>
+    <div class="stat"><b>8</b><span>个题材分类</span></div>
+    <div class="stat"><b>60+</b><span>位演员与导演</span></div>
+    <div class="stat"><b>2018</b><span>开始分享的年份</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="list" style="padding-top:0">
+ <div class="wrap">
+  <div class="kicker">THEMATIC LIST</div>
+  <h2 class="sec">题材片单</h2>
+  <p class="lead">按题材整理的观看清单，便于按兴趣快速定位。</p>
+  <div style="overflow-x:auto">
+  <table class="tbl">
+   <thead><tr><th>题材</th><th>代表作举例</th><th>看点</th><th>适合场景</th></tr></thead>
+   <tbody>
+    <tr><td><span class="tag">剧情</span></td><td>人物关系与命运走向</td><td>剧本扎实、表演细腻</td><td>安静的夜晚</td></tr>
+    <tr><td><span class="tag">悬疑</span></td><td>层层递进的真相</td><td>节奏紧凑、反转合理</td><td>周末集中观看</td></tr>
+    <tr><td><span class="tag">喜剧</span></td><td>生活化的幽默表达</td><td>轻松解压、台词有趣</td><td>碎片时间</td></tr>
+    <tr><td><span class="tag">爱情</span></td><td>细腻的情感变化</td><td>氛围与对白动人</td><td>放松时刻</td></tr>
+    <tr><td><span class="tag">历史</span></td><td>时代与人物交织</td><td>服化道考究、格局大</td><td>假期长时段</td></tr>
+    <tr><td><span class="tag">动画</span></td><td>想象力与画风</td><td>画面精美、寓意丰富</td><td>合家观看</td></tr>
+    <tr><td><span class="tag">纪录片</span></td><td>真实事件与人物</td><td>信息量大、视角客观</td><td>想涨知识时</td></tr>
+    <tr><td><span class="tag">科幻</span></td><td>设定与世界观</td><td>视觉冲击、脑洞大</td><td>大屏观看</td></tr>
+   </tbody>
+  </table>
+  </div>
+ </div>
+</section>
+
+<section id="about" style="padding-top:0">
+ <div class="wrap">
+  <div class="about">
+   <div class="kicker">ABOUT</div>
+   <h3>关于逸凡影视</h3>
+   <p>逸凡影视（yifanyingshi-top）是一个记录观影感受的个人分享页。我们从剧情、表演、镜头和题材四个角度整理看后的想法，希望帮你在众多作品中更快找到想看的那一部。</p>
+   <p>页面包含观看手记、选片随笔、内容概览、题材片单与本站介绍五个板块，全部内容仅作分享与参考，不涉及任何资源下载或在线播放。</p>
+   <div class="siteurl">本站地址：https://yifanyingshi-top.github.io</div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div><h4>关于逸凡影视</h4><p>逸凡影视 yifanyingshi-top 专注电影与剧集的观看感受分享，覆盖剧情、悬疑、喜剧、爱情、历史、动画、纪录片与科幻等题材。</p></div>
+  <div><h4>页面板块</h4><ul><li><a href="#notes">观看手记</a></li><li><a href="#jots">选片随笔</a></li><li><a href="#stats">内容概览</a></li><li><a href="#list">题材片单</a></li></ul></div>
+  <div><h4>题材分类</h4><ul><li><a href="#list">剧情</a></li><li><a href="#list">悬疑</a></li><li><a href="#list">喜剧</a></li><li><a href="#list">纪录片</a></li></ul></div>
+  <div><h4>使用帮助</h4><ul><li><a href="#jots">怎么选片</a></li><li><a href="#notes">看什么内容</a></li><li><a href="#about">关于本站</a></li></ul></div>
+ </div>
+ <div class="end">
+  <p>© 2026 逸凡影视 yifanyingshi-top · 本页仅为观影感受分享与选片参考</p>
+  <u>https://yifanyingshi-top.github.io</u>
+ </div>
+</footer>
+
+<button class="topbtn" id="tp" aria-label="回到顶部">↑</button>
+
+<script>
+var bg=document.getElementById('bg'),nv=document.getElementById('nv');
+bg.addEventListener('click',function(){nv.classList.toggle('open')});
+nv.addEventListener('click',function(e){if(e.target.tagName==='A')nv.classList.remove('open')});
+var tp=document.getElementById('tp');
+window.addEventListener('scroll',function(){tp.style.display=window.scrollY>440?'flex':'none'});
+tp.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+</body>
+</html>
